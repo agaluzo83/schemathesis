@@ -166,6 +166,14 @@ dotenv = ["python-dotenv"]
 
 [[package]]
 category = "main"
+description = "GraphQL implementation for Python, a port of GraphQL.js, the JavaScript reference implementation for GraphQL."
+name = "graphql-core"
+optional = false
+python-versions = ">=3.6,<4"
+version = "3.1.1"
+
+[[package]]
+category = "main"
 description = "A library for property-based testing"
 name = "hypothesis"
 optional = false
@@ -189,11 +197,23 @@ pytz = ["pytz (>=2014.1)"]
 
 [[package]]
 category = "main"
+description = "Hypothesis strategies for GraphQL schemas and queries"
+name = "hypothesis-graphql"
+optional = false
+python-versions = ">=3.6,<4.0"
+version = "0.3.1"
+
+[package.dependencies]
+graphql-core = ">=3.1.0,<4.0.0"
+hypothesis = ">=5.8.0,<6.0.0"
+
+[[package]]
+category = "main"
 description = "Generate test data from JSON schemata with Hypothesis"
 name = "hypothesis-jsonschema"
 optional = false
 python-versions = ">=3.6"
-version = "0.13.1"
+version = "0.14.0"
 
 [package.dependencies]
 hypothesis = ">=5.3.0"
@@ -391,7 +411,7 @@ description = "pytest: simple powerful testing with Python"
 name = "pytest"
 optional = false
 python-versions = ">=3.5"
-version = "5.4.2"
+version = "5.4.3"
 
 [package.dependencies]
 atomicwrites = ">=1.0"
@@ -662,11 +682,11 @@ socks = ["PySocks (>=1.5.6,<1.5.7 || >1.5.7,<2.0)"]
 
 [[package]]
 category = "main"
-description = "Measures number of Terminal column cells of wide-character codes"
+description = "Measures the displayed width of unicode strings in a terminal"
 name = "wcwidth"
 optional = false
 python-versions = "*"
-version = "0.1.9"
+version = "0.2.3"
 
 [[package]]
 category = "main"
@@ -706,7 +726,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "32654c108e4ec4e9cc61999b4148e782396413338dd575b009a16762f1508ede"
+content-hash = "a3811f8b1062bd82f11906f52e977fd339fb3e134a60ef6b1bed27b93a180367"
 python-versions = "^3.6"
 
 [metadata.files]
@@ -810,13 +830,21 @@ flask = [
     {file = "Flask-1.1.2-py2.py3-none-any.whl", hash = "sha256:8a4fdd8936eba2512e9c85df320a37e694c93945b33ef33c89946a340a238557"},
     {file = "Flask-1.1.2.tar.gz", hash = "sha256:4efa1ae2d7c9865af48986de8aeb8504bf32c7f3d6fdc9353d34b21f4b127060"},
 ]
+graphql-core = [
+    {file = "graphql-core-3.1.1.tar.gz", hash = "sha256:1fdc57d08f4492f06b21f3d487311e88fa8c33e0ac1e2d74ec79fb411ceba64a"},
+    {file = "graphql_core-3.1.1-py3-none-any.whl", hash = "sha256:25c2f537b430abc380de8765577938c78b5993584af627b7eb56b061b4ae234d"},
+]
 hypothesis = [
     {file = "hypothesis-5.16.0-py3-none-any.whl", hash = "sha256:21bb5fbe456f775233fe20bcbeb26f648d68025bce554c94c0698fb4c33e7008"},
     {file = "hypothesis-5.16.0.tar.gz", hash = "sha256:7c819501a26ff82ccb4bee8a96b1ff4fff187e041d79ed176964ca550b77098b"},
 ]
+hypothesis-graphql = [
+    {file = "hypothesis-graphql-0.3.1.tar.gz", hash = "sha256:0403b735c9b7a4800f05fe23b0af5ba0e480acee465b747845f6ec222e2e081b"},
+    {file = "hypothesis_graphql-0.3.1-py3-none-any.whl", hash = "sha256:2d0a1ae799ed97a3fd366f9ee6fb47540858850c3e2d6f288117e85b746039d4"},
+]
 hypothesis-jsonschema = [
-    {file = "hypothesis-jsonschema-0.13.1.tar.gz", hash = "sha256:4b87d99cd65ae0b5934c6a87bba5e0d8600bde3e3781507f5acee8147b63502b"},
-    {file = "hypothesis_jsonschema-0.13.1-py3-none-any.whl", hash = "sha256:08e8ad5451725971ab05a384db19b16b328b5ab29f1bb1f3d22ea8a6cd3e6cb8"},
+    {file = "hypothesis-jsonschema-0.14.0.tar.gz", hash = "sha256:5a08d3055c51d786f4cff6effd6ec45ee636e1e096710e4df37e16047fb08fca"},
+    {file = "hypothesis_jsonschema-0.14.0-py3-none-any.whl", hash = "sha256:41f2f05cc00127feda017defdcb70cc2be560a574bc1205eb5244711b63659a1"},
 ]
 idna = [
     {file = "idna-2.9-py2.py3-none-any.whl", hash = "sha256:a068a21ceac8a4d63dbfd964670474107f541babbd2250d61922f029858365fa"},
@@ -930,8 +958,8 @@ pyrsistent = [
     {file = "pyrsistent-0.16.0.tar.gz", hash = "sha256:28669905fe725965daa16184933676547c5bb40a5153055a8dee2a4bd7933ad3"},
 ]
 pytest = [
-    {file = "pytest-5.4.2-py3-none-any.whl", hash = "sha256:95c710d0a72d91c13fae35dce195633c929c3792f54125919847fdcdf7caa0d3"},
-    {file = "pytest-5.4.2.tar.gz", hash = "sha256:eb2b5e935f6a019317e455b6da83dd8650ac9ffd2ee73a7b657a30873d67a698"},
+    {file = "pytest-5.4.3-py3-none-any.whl", hash = "sha256:5c0db86b698e8f170ba4582a492248919255fcd4c79b1ee64ace34301fb589a1"},
+    {file = "pytest-5.4.3.tar.gz", hash = "sha256:7979331bfcba207414f5e1263b5a0f8f521d0f457318836a7355531ed1a4c7d8"},
 ]
 pytest-asyncio = [
     {file = "pytest-asyncio-0.11.0.tar.gz", hash = "sha256:c54866f3cf5dd2063992ba2c34784edae11d3ed19e006d220a3cf0bfc4191fcb"},
@@ -1024,8 +1052,8 @@ urllib3 = [
     {file = "urllib3-1.25.9.tar.gz", hash = "sha256:3018294ebefce6572a474f0604c2021e33b3fd8006ecd11d62107a5d2a963527"},
 ]
 wcwidth = [
-    {file = "wcwidth-0.1.9-py2.py3-none-any.whl", hash = "sha256:cafe2186b3c009a04067022ce1dcd79cb38d8d65ee4f4791b8888d6599d1bbe1"},
-    {file = "wcwidth-0.1.9.tar.gz", hash = "sha256:ee73862862a156bf77ff92b09034fc4825dd3af9cf81bc5b360668d425f3c5f1"},
+    {file = "wcwidth-0.2.3-py2.py3-none-any.whl", hash = "sha256:980fbf4f3c196c0f329cdcd1e84c554d6a211f18e252e525a0cf4223154a41d6"},
+    {file = "wcwidth-0.2.3.tar.gz", hash = "sha256:edbc2b718b4db6cdf393eefe3a420183947d6aa312505ce6754516f458ff8830"},
 ]
 werkzeug = [
     {file = "Werkzeug-1.0.1-py2.py3-none-any.whl", hash = "sha256:2de2a5db0baeae7b2d2664949077c2ac63fbd16d98da0ff71837f7d1dea3fd43"},
